@@ -93,7 +93,15 @@ h1#rgbVal,h1#hexVal {
 
 <script>
 
-
+document.getElementById("rValue").oninput = function(){
+	this.parentElement.querySelector("span").innerHTML = this.value;
+}
+document.getElementById("gValue").oninput = function(){
+	this.parentElement.querySelector("span").innerHTML = this.value;
+}
+document.getElementById("bValue").oninput = function(){
+	this.parentElement.querySelector("span").innerHTML = this.value;
+}
 
 </script>
 
