@@ -93,8 +93,20 @@ h1#rgbVal,h1#hexVal {
 
 <script>
 
+var currentColor = [0,0,0];
+
 function updateColor(){
 	this.parentElement.querySelector("span").innerHTML = this.value;
+	switch(this.getAttribute("id")){
+		case "rValue":
+			currentColor[0] = this.value;
+		case "gValue":
+			currentColor[1] = this.value;
+		case "bValue":
+			currentColor[2] = this.value;
+	}
+	console.log(currentColor);
+	document.getElementById("colorBox").setAttribute("style","rgb(" + currentColor[0] + "," + currentColor[1] + "," + currentColor[2] + ")");
 }
 
 document.getElementById("rValue").oninput = updateColor;
