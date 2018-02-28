@@ -55,14 +55,18 @@ h1:not(#rgbVal):not(#hexVal) input {
 
 	-webkit-appearance: none;
 	height: 2.5vh;
-	background: #d3d3d3;
+	background: #ddd;
 	outline: none;
-	opacity: 0.7;
-	-webkit-transition: .2s;
-	transition: opacity .2s;
 }
-h1:not(#rgbVal):not(#hexVal) input:hover{
+h1:not(#rgbVal):not(#hexVal) input::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 6vh;
+	height: 6vh;
+	background-color: black;
 	opacity: 1;
+	border-radius: 50%;
+	cursor: pointer;
 }
 </style>
 
