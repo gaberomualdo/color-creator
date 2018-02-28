@@ -21,17 +21,51 @@ div#colorBox {
 	border-radius: 50%;
 	float: left;
 }
+.rightArea {
+	float: left;
+	width: 50%;
+	padding: 2.5vh 0;
+}
 h1 {
 	display: block;
-	width: 50%;
+	width: 100%;
 	float: left;
 }
+h1:not(#rgbVal):not(#hexVal){
+	line-height: 10vh;
+	font-size: 2rem;
+}
+h1:not(#rgbVal):not(#hexVal) * {
+	display: block;
+	float: left;
+}
+h1:not(#rgbVal):not(#hexVal) strong {
+	text-align: right;
+	box-sizing: border-box;
+	padding-right: 2.5%;
+	width: 20%;
+}
+h1:not(#rgbVal):not(#hexVal) span {
+	text-align: center;
+	width: 10%;
+}
+h1:not(#rgbVal):not(#hexVal) input {
+	width: 70%;
+	margin: 3.75vh 0;
 
+	-webkit-appearance: none;
+	height: 2.5vh;
+	background: #d3d3d3;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
 </style>
 
 <body>
 	<div id="colorBox"></div>
-	<div class="rightarea">
+	<div class="rightArea">
 		<h1><strong>Red: </strong><input type="range" min="0" max="255" value="0" id="rValue"><span>0</span></h1>
 		<h1><strong>Green: </strong><input type="range" min="0" max="255" value="0" id="gValue"><span>0</span></h1>
 		<h1><strong>Blue: </strong><input type="range" min="0" max="255" value="0" id="bValue"><span>0</span></h1>
