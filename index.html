@@ -99,6 +99,15 @@ h1#rgbVal,h1#hexVal {
 
 var currentColor = [0,0,0];
 
+
+function componentToHex(c){
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+function rgbToHex(r,g,b){
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
 function returnBgCSS(color){
 	return "background-color: rgb(" + color[0] + "," + color[1] + "," + color[2] + ")";
 }
