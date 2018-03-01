@@ -113,6 +113,7 @@ function returnBgCSS(color){
 }
 function updateColorHeaders(){
 	document.getElementById("rgbVal").innerHTML = "rgb(" + currentColor[0] + "," + currentColor[1] + "," + currentColor[2] + ")";
+	document.getElementById("hexVal").innerHTML = rgbToHex(currentColor);
 }
 
 function updateColor(){
