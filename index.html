@@ -63,10 +63,10 @@ h1:not(#rgbVal):not(#hexVal) input::-webkit-slider-thumb {
 	appearance: none;
 	width: 6vh;
 	height: 6vh;
-	background-color: black;
 	opacity: 1;
 	border-radius: 50%;
 	cursor: pointer;
+	background-color: black;
 }
 
 h1#rgbVal {
@@ -78,6 +78,10 @@ h1#rgbVal,h1#hexVal {
 	text-align: center;
 }
 </style>
+
+<style id="rValueCSS"></style>
+<style id="gValueCSS"></style>
+<style id="bValueCSS"></style>
 
 <body>
 	<div id="colorBox"></div>
@@ -103,13 +107,13 @@ function updateColor(){
 	this.parentElement.querySelector("span").innerHTML = this.value;
 	if(this.getAttribute("id")=="rValue"){
 		currentColor[0] = this.value;
-
+		document.getElementById("rValueCSS").innerHTML = "#rValue::-webkit-slider-thumb{" + returnBgCSS([this.value,0,0]) + " !important;}";
 	}else if(this.getAttribute("id")=="gValue"){
 		currentColor[1] = this.value;
-
+		document.getElementById("gValueCSS").innerHTML = "#gValue::-webkit-slider-thumb{" + returnBgCSS([0,this.value,0]) + " !important;}";
 	}else if(this.getAttribute("id")=="bValue"){
 		currentColor[2] = this.value;
-
+		document.getElementById("bValueCSS").innerHTML = "#bValue::-webkit-slider-thumb{" + returnBgCSS([0,0,this.value]) + " !important;}";
 	}
 	document.getElementById("colorBox").setAttribute("style",returnBgCSS(currentColor));
 }
