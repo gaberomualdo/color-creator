@@ -95,8 +95,8 @@ h1#rgbVal,h1#hexVal {
 
 var currentColor = [0,0,0];
 
-function setBgColor(el,color){
-	el.setAttribute("style","background-color: rgb(" + color[0] + "," + color[1] + "," + color[2] + ")");
+function returnBgCSS(color){
+	return "background-color: rgb(" + color[0] + "," + color[1] + "," + color[2] + ")";
 }
 
 function updateColor(){
