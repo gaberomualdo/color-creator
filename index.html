@@ -95,17 +95,23 @@ h1#rgbVal,h1#hexVal {
 
 var currentColor = [0,0,0];
 
+function setBgColor(el,color){
+	el.setAttribute("style","background-color: rgb(" + color[0] + "," + color[1] + "," + color[2] + ")");
+}
+
 function updateColor(){
 	this.parentElement.querySelector("span").innerHTML = this.value;
 	if(this.getAttribute("id")=="rValue"){
 		currentColor[0] = this.value;
+
 	}else if(this.getAttribute("id")=="gValue"){
 		currentColor[1] = this.value;
+
 	}else if(this.getAttribute("id")=="bValue"){
 		currentColor[2] = this.value;
+
 	}
-	console.log(currentColor);
-	document.getElementById("colorBox").setAttribute("style","background-color: rgb(" + currentColor[0] + "," + currentColor[1] + "," + currentColor[2] + ")");
+	setBgColor(document.getElementById("colorBox"));
 }
 
 document.getElementById("rValue").oninput = updateColor;
