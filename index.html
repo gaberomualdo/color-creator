@@ -104,8 +104,8 @@ function componentToHex(c){
     var hex = c.toString(16);
     return hex.length == 1 ? "0" + hex : hex;
 }
-function rgbToHex(color){
-    return "#" + componentToHex(color[0]) + componentToHex(color[1]) + componentToHex(color[2]);
+function rgbToHex(r,g,b){
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
 function returnBgCSS(color){
@@ -113,7 +113,7 @@ function returnBgCSS(color){
 }
 function updateColorHeaders(){
 	document.getElementById("rgbVal").innerHTML = "rgb(" + currentColor[0] + "," + currentColor[1] + "," + currentColor[2] + ")";
-	document.getElementById("hexVal").innerHTML = rgbToHex(currentColor);
+	document.getElementById("hexVal").innerHTML = rgbToHex(currentColor[0],currentColor[1],currentColor[2]);
 }
 
 function updateColor(){
